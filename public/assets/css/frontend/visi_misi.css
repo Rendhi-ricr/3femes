@@ -1,0 +1,99 @@
+/* Styling untuk halaman visi misi */
+.visimisi-page {
+    font-family: Arial, sans-serif;
+    padding: 40px; /* Perbesar padding */
+    text-align: center;
+}
+
+/* Styling judul halaman */
+.visimisi-page h2 {
+    font-size: 15px; /* Perbesar ukuran judul */
+    color: #004494;
+    margin-bottom: 30px;
+}
+
+.visimisi-page h3 {
+    font-size: 25px; /* Perbesar ukuran subjudul */
+    color: black;
+    margin-bottom: 30px;
+}
+
+/* Styling untuk header khusus */
+.header-section {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    background-color: #e6f1fc; /* Background biru muda */
+    padding: 40px; /* Perbesar padding */
+    border-radius: 15px; /* Perbesar radius */
+    margin-bottom: 40px; /* Tambahkan jarak di bawah */
+    gap: 20px; /* Jarak antar elemen logo dan tagline */
+}
+
+/* Logo dan teks Universitas Subang */
+.header-section .logo {
+    display: flex;
+    align-items: center;
+    text-align: left; /* Teks diatur ke kiri */
+}
+
+.header-section .logo img {
+    height: 150px; /* Sesuaikan ukuran logo */
+    margin-right: 20px; /* Jarak antara logo dan teks */
+}
+
+.header-section .logo-text {
+    text-align: left; /* Teks diatur ke kiri */
+}
+
+.header-section .logo-text h1 {
+    font-size: 2.5em; /* Perbesar ukuran teks */
+    margin: 0; /* Hilangkan margin */
+    color: #333; /* Warna hitam */
+}
+
+/* Styling untuk tagline */
+.header-section .tagline {
+    text-align: right; /* Teks diatur ke kanan */
+    font-family: 'Poppins', sans-serif; /* Menggunakan font Poppins */
+    font-style: italic; /* Membuat teks miring */
+}
+
+.header-section .tagline span {
+    display: block; /* Setiap kata berada di baris baru */
+    font-size: 25px; /* Perbesar ukuran teks */
+    color: #333; /* Warna hitam */
+    margin: 0; /* Hilangkan margin */
+}
+
+/* Tambahan untuk mengurangi jarak dengan tepi */
+.header-section {
+    padding-left: 250px; /* Kurangi jarak dari kiri */
+    padding-right: 250px; /* Kurangi jarak dari kanan */
+}
+/* Styling konten visi dan misi */
+.vision-mission h4 {
+    font-size: 25px; /* Perbesar ukuran heading visi dan misi */
+    margin-top: 40px;
+    color: #333; /* Ubah warna menjadi hitam */
+}
+
+.vision-mission p {
+    font-size: 1.5em; /* Perbesar ukuran teks */
+    color: #333; /* Warna hitam */
+    line-height: 1.8; /* Tambahkan jarak antar baris */
+}
+
+.vision-mission ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.vision-mission ul li {
+    font-size: 1.3em; /* Perbesar ukuran teks dalam daftar */
+    color: #333; /* Warna hitam */
+    margin-bottom: 15px; /* Tambahkan jarak antar item */
+    text-align: justify;
+    padding-left:150px;
+    padding-right:150px;
+}

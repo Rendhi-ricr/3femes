@@ -1,0 +1,123 @@
+/* Reset margin dan padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styling khusus untuk halaman Sejarah */
+.sejarah-page {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Menyatukan semua elemen secara horizontal di tengah */
+    justify-content: flex-start;
+    min-height: 100vh; /* Menggunakan min-height untuk memastikan footer tetap di bawah */
+    background-color: #f4f4f4; /* Opsional, menambah latar belakang */
+}
+
+/* Styling untuk section utama */
+.sejarah-page section {
+    padding: 20px;
+    width: 100%; /* Membuat konten mengisi lebar halaman */
+    max-width: 1200px; /* Membatasi lebar konten agar tetap teratur */
+    text-align: center; /* Memusatkan judul */
+    margin-bottom: 40px; /* Memberikan jarak di bawah section */
+}
+
+/* Judul halaman */
+.sejarah-page h3 {
+    color: #0071BD;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Styling untuk sub judul */
+.sejarah-page h2 {
+    color: black;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Konten yang berisi gambar dan teks */
+.sejarah-page .content {
+    display: flex;
+    flex-direction: column; /* Mengatur elemen secara vertikal */
+    align-items: center; /* Menyusun gambar dan teks di tengah */
+    gap: 20px; /* Memberikan jarak antar elemen */
+    margin-top: 20px;
+}
+
+/* Styling untuk gambar */
+.sejarah-page .content img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    margin-bottom: 20px; /* Memberikan ruang di bawah gambar */
+}
+
+/* Styling untuk teks deskripsi */
+.sejarah-page .content p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    text-align: justify; /* Meratakan teks ke kiri dan kanan */
+    width: 100%; /* Membuat teks mengisi lebar kontainer */
+    max-width: 1000px; /* Membatasi lebar teks agar hampir sama dengan footer */
+    margin: 0 auto; /* Memusatkan teks di dalam kontainer */
+    padding: 0 20px; /* Memberikan padding horizontal agar teks tidak terlalu menempel ke tepi */
+}
+/* Footer tetap tidak terpengaruh */
+.campus-info {
+    display: flex;
+    justify-content: center; /* Pusatkan secara horizontal */
+    align-items: center; /* Pusatkan secara vertikal */
+    flex-wrap: wrap; /* Agar konten responsif */
+    background-color: #003d80;
+    color: white;
+    padding: 20px 0;
+}
+
+.campus-card {
+    text-align: center; /* Pusatkan teks */
+    max-width: 300px;
+    margin: 10px;
+}
+
+.campus-card img {
+    width: 100%; /* Penuhi lebar kartu */
+    height: 150px; /* Tetapkan tinggi */
+    object-fit: cover; /* Potong gambar sesuai ukuran */
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.campus-card h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.campus-card p {
+    font-size: 14px;
+}
+
+.stats {
+    display: flex;
+    flex-direction: column; /* Atur elemen dalam kolom */
+    align-items: center; /* Pusatkan secara horizontal */
+    justify-content: center; /* Pusatkan secara vertikal */
+}
+
+.stats-icon {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+.stats-icon h2 {
+    font-size: 32px;
+    margin: 0;
+    color: white;
+}

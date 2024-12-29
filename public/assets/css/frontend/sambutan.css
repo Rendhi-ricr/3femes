@@ -1,0 +1,25 @@
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.sambutan {
+    text-align: center;
+}
+
+.sambutan h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.sambutan .rektor-photo {
+    max-width: 200px; /* Atur ukuran foto rektor */
+    border-radius: 10px;
+    margin: 20px auto;
+}
+
+.sambutan p {
+    font-size: 1rem;
+    margin-top: 10px;
+}

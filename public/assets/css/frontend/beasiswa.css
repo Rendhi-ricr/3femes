@@ -1,0 +1,37 @@
+/* Styling untuk "Tentang kami" */
+.tentang-kami {
+    color: blue; /* Warna biru */
+    font-size: 1.2rem; /* Ukuran lebih kecil */
+    text-align: center;
+    margin-bottom: 20px;
+
+
+}
+
+/* Styling untuk heading dan fasilitas lainnya tetap seperti sebelumnya */
+.fasilitas h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.beasiswa-container {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    padding: 20px;
+}
+
+.beasiswa-item {
+    margin-bottom: 50px;
+}
+
+.beasiswa-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+
+.fasilitas-item p {
+    font-size: 1rem;
+}
