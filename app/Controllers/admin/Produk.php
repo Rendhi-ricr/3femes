@@ -10,4 +10,8 @@ class Produk extends BaseController
     {
         return view('back/produk/index');
     }
+    public function tambah()
+    {
+        return view('back/produk/tambah');
+    }
 }

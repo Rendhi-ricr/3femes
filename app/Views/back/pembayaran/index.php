@@ -1,17 +1,12 @@
 <?= $this->extend('layouts/back/base') ?>
-<?= $this->section('title') ?>Data Produk<?= $this->endSection() ?>
+<?= $this->section('title') ?>Data Pembayaran<?= $this->endSection() ?>
 <?= $this->section('content') ?>
 <div class="container-fluid p-0">
 
     <div class="mb-3">
         <div class="row">
             <div class="col-md-6">
-                <h1 class="h3 d-inline align-middle">Data Produk</h1>
-            </div>
-            <div class="col-md-6">
-                <div class="text-end">
-                    <a href="<?= base_url('admin/produk/tambah') ?>" class="btn btn-primary"><i class="ti ti-plus ti-sm"></i> Tambah</a>
-                </div>
+                <h1 class="h3 d-inline align-middle">Data Pembayaran</h1>
             </div>
         </div>
     </div>
@@ -26,11 +21,14 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Nama Produk</th>
-                                    <th>Deskripsi</th>
-                                    <th>Harga</th>
-                                    <th>Foto</th>
-                                    <th>Qty</th>
+                                    <th>Tanggal</th>
+                                    <th>No Pesanan</th>
+                                    <th>Nama Pengguna</th>
+                                    <th>Produk</th>
+                                    <th>Pengiriman</th>
+                                    <th>Metode Pembayaran</th>
+                                    <th>Total Bayar</th>
+                                    <th>Bukti Pembayaran</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -42,9 +40,11 @@
                                     <td></td>
                                     <td></td>
                                     <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><button class="btn btn-primary btn-sm">Lihat Foto</button></td>
                                     <td>
-                                        <button class="btn btn-primary btn-sm">Edit</button>
-                                        <button class="btn btn-danger btn-sm">Hapus</button>
+                                        <button class="btn btn-success btn-sm">Verify</button>
                                     </td>
                                 </tr>
                             </tbody>

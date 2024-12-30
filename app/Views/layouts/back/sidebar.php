@@ -21,22 +21,22 @@
                 </a>
             </li>
             <li class="sidebar-item">
-                <a class="sidebar-link" href="<?= base_url('admin') ?>">
+                <a class="sidebar-link" href="<?= base_url('admin/pesanan') ?>">
                     <i class="align-middle" data-feather="align-left"></i> <span class="align-middle">Pesanan</span>
                 </a>
             </li>
             <li class="sidebar-item">
-                <a class="sidebar-link" href="<?= base_url('admin') ?>">
+                <a class="sidebar-link" href="<?= base_url('admin/pembayaran') ?>">
                     <i class="align-middle" data-feather="align-left"></i> <span class="align-middle">Pembayaran</span>
                 </a>
             </li>
             <li class="sidebar-item">
-                <a class="sidebar-link" href="<?= base_url('admin') ?>">
+                <a class="sidebar-link" href="<?= base_url('admin/pengiriman') ?>">
                     <i class="align-middle" data-feather="align-left"></i> <span class="align-middle">Pengiriman</span>
                 </a>
             </li>
             <li class="sidebar-item">
-                <a class="sidebar-link" href="<?= base_url('admin') ?>">
+                <a class="sidebar-link" href="<?= base_url('admin/laporan') ?>">
                     <i class="feather" data-feather="trending-up"></i> <span class="trending-up">Laporan</span>
                 </a>
             </li>
