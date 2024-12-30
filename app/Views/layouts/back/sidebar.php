@@ -11,12 +11,12 @@
                 </a>
             </li>
             <li class="sidebar-item">
-                <a class="sidebar-link" href="<?= base_url('admin') ?>">
+                <a class="sidebar-link" href="<?= base_url('admin/produk') ?>">
                     <i class="align-middle" data-feather="align-left"></i> <span class="align-middle">Produk</span>
                 </a>
             </li>
             <li class="sidebar-item">
-                <a class="sidebar-link" href="<?= base_url('admin') ?>">
+                <a class="sidebar-link" href="<?= base_url('admin/komentar') ?>">
                     <i class="align-middle" data-feather="align-left"></i> <span class="align-middle">Komentar</span>
                 </a>
             </li>
