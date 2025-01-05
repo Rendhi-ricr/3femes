@@ -14,8 +14,16 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item fs-4">
-                    <i class="bi bi-cart"></i>
+                <!-- Keranjang Belanja dengan Badge -->
+                <li class="nav-item fs-4 position-relative">
+                    <a href="<?= base_url('keranjang') ?>" class="text-white">
+                        <i class="bi bi-cart"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            10 <!-- Ganti dengan variabel PHP yang menampilkan jumlah barang -->
+                            <span class="visually-hidden">Jumlah barang</span>
+                        </span>
+                    </a>
+
                 </li>
                 <li class="nav-item fs-4 ms-4">
                     <i class="bi bi-person"></i>

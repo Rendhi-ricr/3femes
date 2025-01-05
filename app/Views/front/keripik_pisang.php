@@ -35,7 +35,12 @@
                     <img src="<?= base_url('img/produk/' . esc($item['gambar'])) ?>" class="card-img-top custom-card-img" alt="...">
                     <div class="card-body">
                         <h5 class="card-title"><?= esc($item['nama_produk']) ?></h5>
-                        <a href="#" class="btn text-white" style="background: #CB2F08;width: 100px; border-radius: 15px;">Pesan</a>
+                        <!-- <a href="#" class="btn text-white" style="background: #CB2F08;width: 100px; border-radius: 15px;">Pesan</a> -->
+                        <a href="<?= site_url('keterangan') ?>?id_produk=<?= esc($item['id_produk']) ?>&nama_produk=<?= esc($item['nama_produk']) ?>&harga=<?= esc($item['harga']) ?>&gambar=<?= esc($item['gambar']) ?>&kategori=<?= esc($item['kategori']) ?>" class="btn btn-primary">
+                            Tambah ke Keranjang
+                        </a>
+
+
                     </div>
                 </div>
             </div>
