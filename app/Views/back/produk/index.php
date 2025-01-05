@@ -47,7 +47,7 @@
                                         <td>Rp. <?= number_format($p['harga'], 0, ',', '.'); ?></td>
                                         <td><?= $p['kategori']; ?></td>
                                         <td><?= $p['qty']; ?></td>
-                                        <td><img src="<?= base_url('produk/' . $p['gambar']) ?>" alt=":<?= $p['nama_produk'] ?>" style="width: 200px; heigh:10px;"></td>
+                                        <td><img src="<?= base_url('img/produk/' . $p['gambar']) ?>" alt=":<?= $p['nama_produk'] ?>" style="width: 200px; heigh:10px;"></td>
                                         <td>
                                             <a href="<?= base_url('admin/produk/edit/' . $p['id_produk']) ?>" class="btn btn-primary btn-sm">Edit</a>
                                             <a href="<?= base_url('admin/produk/delete/' . $p['id_produk']) ?>" class="btn btn-danger btn-sm">Hapus</a>

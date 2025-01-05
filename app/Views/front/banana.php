@@ -32,7 +32,7 @@
         <?php foreach ($produk as $item): ?>
             <div class="col-md-4 my-2">
                 <div class="card w-100 ">
-                    <img src="<?= base_url('produk/' . esc($item['gambar'])) ?>" class="card-img-top custom-card-img" alt="...">
+                    <img src="<?= base_url('img/produk/' . esc($item['gambar'])) ?>" class="card-img-top custom-card-img" alt="...">
                     <div class="card-body">
                         <h5 class="card-title"><?= esc($item['nama_produk']) ?></h5>
                         <a href="#" class="btn text-white" style="background: #CB2F08;width: 100px; border-radius: 15px;">Pesan</a>

@@ -8,12 +8,12 @@ class Produk extends BaseController
 {
     public function index()
     {
-        // $produkModel = new ProdukModels();
+        $produkModel = new ProdukModels();
 
-        // // Ambil produk dengan kategori 'Banana Boat'
-        // $produk = $produkModel->get_produk_by_kategori('Cireng Isi');
+        // Ambil produk dengan kategori 'Banana Boat'
+        $produk = $produkModel->get_produk_by_kategori('Cireng Isi');
 
-        return view('front/produk');
+        return view('front/produk', ['produk' => $produk]);
     }
 
     public function kp()

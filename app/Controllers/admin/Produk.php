@@ -36,7 +36,7 @@ class Produk extends BaseController
         // Proses upload file gambar
         if ($fileGambar && $fileGambar->isValid() && !$fileGambar->hasMoved()) {
             $namaGambar = $fileGambar->getRandomName();
-            $fileGambar->move(ROOTPATH . 'public/produk', $namaGambar);
+            $fileGambar->move(ROOTPATH . 'public/img/produk', $namaGambar);
         }
 
         // Simpan data ke database
@@ -79,13 +79,13 @@ class Produk extends BaseController
         // Proses upload file gambar baru
         if ($fileGambar && $fileGambar->isValid() && !$fileGambar->hasMoved()) {
             // Hapus gambar lama
-            if ($produk['gambar'] && file_exists('public/produk/' . $produk['gambar'])) {
-                unlink('public/produk/' . $produk['gambar']);
+            if ($produk['gambar'] && file_exists('public/img/produk/' . $produk['gambar'])) {
+                unlink('public/img/produk/' . $produk['gambar']);
             }
 
             // Simpan gambar baru
             $namaGambar = $fileGambar->getRandomName();
-            $fileGambar->move(ROOTPATH . 'public/produk', $namaGambar);
+            $fileGambar->move(ROOTPATH . 'public/img/produk', $namaGambar);
         }
 
         // Update data di database
@@ -107,8 +107,8 @@ class Produk extends BaseController
         $produk = $this->produkModel->find($id_produk);
 
         // Hapus gambar jika ada
-        if ($produk['gambar'] && file_exists('../public/produk/' . $produk['gambar'])) {
-            unlink('../public/produk/' . $produk['gambar']);
+        if ($produk['gambar'] && file_exists('../public/img/produk/' . $produk['gambar'])) {
+            unlink('../public/img/produk/' . $produk['gambar']);
         }
 
         // Hapus data dari database
