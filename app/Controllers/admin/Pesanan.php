@@ -2,6 +2,8 @@
 
 namespace App\Controllers\admin;
 
+use App\Models\PesananModel;
+
 use App\Controllers\BaseController;
 
 class Pesanan extends BaseController
