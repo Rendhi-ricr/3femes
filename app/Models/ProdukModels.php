@@ -29,4 +29,9 @@ class ProdukModels extends Model
         $query = $this->db->table($this->table)->delete(array('id_produk' => $id_produk));
         return $query;
     }
+
+    public function get_produk_by_kategori($kategori)
+    {
+        return $this->where('kategori', $kategori)->findAll();
+    }
 }
