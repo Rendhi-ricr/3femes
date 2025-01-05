@@ -29,24 +29,31 @@
                                     <th>Nama Produk</th>
                                     <th>Deskripsi</th>
                                     <th>Harga</th>
-                                    <th>Foto</th>
+                                    <th>Kategori</th>
                                     <th>Qty</th>
+                                    <th>Foto</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                        <button class="btn btn-primary btn-sm">Edit</button>
-                                        <button class="btn btn-danger btn-sm">Hapus</button>
-                                    </td>
-                                </tr>
+                                <?php
+                                $no = 1;
+                                foreach ($produk as $p) :
+                                ?>
+                                    <tr>
+                                        <td><?= $no++; ?></td>
+                                        <td><?= $p['nama_produk']; ?></td>
+                                        <td><?= $p['deskripsi']; ?></td>
+                                        <td>Rp. <?= number_format($p['harga'], 0, ',', '.'); ?></td>
+                                        <td><?= $p['kategori']; ?></td>
+                                        <td><?= $p['qty']; ?></td>
+                                        <td><img src="<?= base_url('produk/' . $p['gambar']) ?>" alt=":<?= $p['nama_produk'] ?>" style="width: 200px; heigh:10px;"></td>
+                                        <td>
+                                            <a href="<?= base_url('admin/produk/edit/' . $p['id_produk']) ?>" class="btn btn-primary btn-sm">Edit</a>
+                                            <a href="<?= base_url('admin/produk/delete/' . $p['id_produk']) ?>" class="btn btn-danger btn-sm">Hapus</a>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
                             </tbody>
                         </table>
                     </div>

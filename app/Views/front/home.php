@@ -24,8 +24,6 @@
                 <img src="<?= base_url('img/produk/cireng.png') ?>" class="card-img-top custom-card-img" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Cireng Isi</h5>
-                    <p class="card-text">Rp.</p>
-                    <a href="#" class="btn btn-primary">Beli Sekarang</a>
                 </div>
             </div>
         </div>
@@ -34,8 +32,6 @@
                 <img src="<?= base_url('img/produk/pisang.png') ?>" class="card-img-top custom-card-img" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Keripik Pisang</h5>
-                    <p class="card-text">Rp.</p>
-                    <a href="#" class="btn btn-primary">Beli Sekarang</a>
                 </div>
             </div>
         </div>
@@ -44,8 +40,6 @@
                 <img src="<?= base_url('img/produk/banana.png') ?>" class="card-img-top custom-card-img" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Banana Boat</h5>
-                    <p class="card-text">Rp.</p>
-                    <a href="#" class="btn btn-primary">Beli Sekarang</a>
                 </div>
             </div>
         </div>
