@@ -8,19 +8,27 @@ class KeranjangModel extends Model
 {
     protected $table = 't_keranjang';
     protected $primaryKey = 'id_keranjang';
-    protected $allowedFields = ['id_produk', 'ukuran', 'jumlah', 'session_id'];
+    protected $allowedFields = ['id_user', 'id_produk', 'ukuran', 'jumlah', 'session_id'];
 
-    public function getKeranjangItems($sessionId)
+    public function getKeranjangItems($sessionId, $idUser = null)
     {
-        return $this->select('t_keranjang.*, t_produk.nama_produk, t_produk.harga')
-            ->join('t_produk', 't_produk.id_produk = t_keranjang.id_produk')
-            ->where('session_id', $sessionId)
-            ->findAll();
+        $this->select('t_keranjang.*, t_produk.nama_produk, t_produk.harga')
+            ->join('t_produk', 't_produk.id_produk = t_keranjang.id_produk');
+
+        if ($idUser) {
+            $this->where('t_keranjang.id_user', $idUser);
+        } else {
+            $this->where('t_keranjang.session_id', $sessionId);
+        }
+
+        return $this->findAll();
     }
 
-    public function tambahKeKeranjang($sessionId, $id_produk)
+    public function tambahKeKeranjang($sessionId, $idUser, $data)
     {
-        $this->insert(['session_id' => $sessionId, 'id_produk' => $id_produk, 'jumlah' => 1]);
+        $data['session_id'] = $sessionId;
+        $data['id_user'] = $idUser;
+        $this->insert($data);
     }
 
     public function hapusDariKeranjang($id_keranjang)

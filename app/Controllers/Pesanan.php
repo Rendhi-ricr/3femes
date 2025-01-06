@@ -13,11 +13,21 @@ class Pesanan extends BaseController
     {
         $keranjangModel = new KeranjangModel();
         $pengiriman = new PengirimanModels();
+
+        // Ambil data keranjang
         $keranjangItems = $keranjangModel->getKeranjangItems(session_id());
         $pengiriman = $pengiriman->findAll();
 
-        return view('front/checkout', ['keranjangItems' => $keranjangItems, 'kurir' => $pengiriman]);
+        // Ambil nama pengguna dari session
+        $nama = session()->get('nama_lengkap');
+
+        return view('front/checkout', [
+            'keranjangItems' => $keranjangItems,
+            'kurir' => $pengiriman,
+            'nama' => $nama, // Kirim nama pengguna ke view
+        ]);
     }
+
 
     public function buatPesanan()
     {

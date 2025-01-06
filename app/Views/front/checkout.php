@@ -10,8 +10,8 @@
         <div class="card p-4 mb-4" style="background-color: #f9eaea;">
             <h2 class="card-title">Alamat Pengiriman</h2>
             <div class="mb-3">
-                <label for="nama" class="form-label">Nama:</label>
-                <input type="text" id="nama" name="nama" class="form-control" required>
+                <label for="id_user" class="form-label">Nama</label>
+                <input type="text" class="form-control" id="id_user" name="id_user" value="<?= esc($nama) ?>" readonly>
             </div>
 
             <div class="mb-3">

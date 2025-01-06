@@ -21,7 +21,7 @@
                     <a class="dropdown-item" href="index.html"><i class="align-middle me-1" data-feather="settings"></i> Settings & Privacy</a>
                     <a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="help-circle"></i> Help Center</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="<?= base_url('/logout') ?>">Log out</a>
+                    <a class="dropdown-item" href="<?= base_url('auth/logout') ?>">Log out</a>
                 </div>
             </li>
         </ul>

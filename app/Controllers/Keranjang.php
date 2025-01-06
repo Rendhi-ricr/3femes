@@ -2,7 +2,6 @@
 
 namespace App\Controllers;
 
-use App\Models\ProdukModels;
 use App\Models\KeranjangModel;
 
 class Keranjang extends BaseController
@@ -10,30 +9,41 @@ class Keranjang extends BaseController
     public function index()
     {
         $keranjangModel = new KeranjangModel();
-        $keranjangItems = $keranjangModel->getKeranjangItems(session_id());
+        $idUser = session()->get('id_user'); // Ambil id_user dari session
+        $sessionId = session_id(); // Ambil session_id
 
-        return view('front/detail_produk', ['keranjangItems' => $keranjangItems]);
+        // Ambil keranjang berdasarkan id_user jika login, atau session_id jika tidak login
+        $keranjangItems = $keranjangModel->getKeranjangItems($sessionId, $idUser);
+
+        // Jika tidak login, kosongkan keranjang
+        $keranjangItems = $idUser ? $keranjangItems : [];
+
+        // Tampilkan view
+        return view('front/detail_produk', [
+            'keranjangItems' => $keranjangItems,
+        ]);
     }
 
     public function simpan()
     {
         $keranjangModel = new KeranjangModel();
-        $keranjangModel->save([
+        $idUser = session()->get('id_user'); // Ambil id_user dari session
+        $sessionId = session_id(); // Ambil session_id
+
+        if (!$idUser) {
+            return redirect()->to('/login')->with('error', 'Silakan login untuk menambahkan ke keranjang.');
+        }
+
+        $data = [
             'id_produk' => $this->request->getPost('id_produk'),
             'ukuran' => $this->request->getPost('size'),
             'jumlah' => $this->request->getPost('qty'),
-        ]);
-        return redirect()->to('/produk')->with('success', 'Beasiswa berhasil Ditambahkan');
+        ];
+
+        $keranjangModel->tambahKeKeranjang($sessionId, $idUser, $data);
+
+        return redirect()->to('/produk')->with('success', 'Produk berhasil ditambahkan ke keranjang.');
     }
-
-    // public function tambah($id_produk)
-    // {
-    //     $keranjangModel = new KeranjangModel();
-    //     $keranjangModel->tambahKeKeranjang(session_id(), $id_produk);
-
-
-    //     return redirect()->to('/keranjang');
-    // }
 
     public function hapus($id_keranjang)
     {

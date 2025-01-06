@@ -7,11 +7,12 @@ use CodeIgniter\Model;
 class PesananModel extends Model
 {
     protected $table = 't_pesanan';
-    protected $allowedFields = ['id_pengiriman', 'nama_pelanggan', 'email_pelanggan', 'alamat_pelanggan', 'total_harga'];
+    protected $allowedFields = ['id_user', 'id_pengiriman', 'nama_pelanggan', 'email_pelanggan', 'alamat_pelanggan', 'total_harga'];
 
     public function buatPesanan($data, $totalHarga)
     {
         $pesananData = [
+            'id_user' => session()->get('id_user'),
             'id_pengiriman' => $data['id_pengiriman'],
             'nama_pelanggan' => $data['nama'],
             'email_pelanggan' => $data['email'],
