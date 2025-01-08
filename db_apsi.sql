@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jan 05, 2025 at 10:47 PM
+-- Generation Time: Jan 06, 2025 at 04:18 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -51,7 +51,11 @@ INSERT INTO `t_detail_pesanan` (`id_detail_pesanan`, `id_pesanan`, `id_produk`, 
 (9, 7, 14, 1, '15000.00'),
 (10, 8, 7, 1, '10000.00'),
 (11, 9, 8, 1, '10000.00'),
-(12, 9, 18, 1, '20000.00');
+(12, 9, 18, 1, '20000.00'),
+(13, 10, 7, 1, '10000.00'),
+(14, 10, 7, 1, '10000.00'),
+(15, 10, 8, 1, '10000.00'),
+(16, 10, 14, 1, '15000.00');
 
 -- --------------------------------------------------------
 
@@ -61,6 +65,7 @@ INSERT INTO `t_detail_pesanan` (`id_detail_pesanan`, `id_pesanan`, `id_produk`, 
 
 CREATE TABLE `t_keranjang` (
   `id_keranjang` int NOT NULL,
+  `id_user` int NOT NULL,
   `id_produk` int NOT NULL,
   `ukuran` varchar(100) NOT NULL,
   `jumlah` int NOT NULL,
@@ -71,8 +76,11 @@ CREATE TABLE `t_keranjang` (
 -- Dumping data for table `t_keranjang`
 --
 
-INSERT INTO `t_keranjang` (`id_keranjang`, `id_produk`, `ukuran`, `jumlah`, `session_id`) VALUES
-(22, 7, '50 gram', 1, '');
+INSERT INTO `t_keranjang` (`id_keranjang`, `id_user`, `id_produk`, `ukuran`, `jumlah`, `session_id`) VALUES
+(22, 0, 7, '50 gram', 1, ''),
+(23, 1, 7, '50 gram', 1, ''),
+(24, 1, 8, '50 gram', 1, ''),
+(25, 1, 14, '50 gram', 1, '');
 
 -- --------------------------------------------------------
 
@@ -101,6 +109,7 @@ INSERT INTO `t_pengiriman` (`id_pengiriman`, `nama_pengiriman`, `nominal`) VALUE
 
 CREATE TABLE `t_pesanan` (
   `id_pesanan` int NOT NULL,
+  `id_user` int NOT NULL,
   `id_pengiriman` int NOT NULL,
   `nama_pelanggan` varchar(255) NOT NULL,
   `email_pelanggan` varchar(255) NOT NULL,
@@ -113,12 +122,13 @@ CREATE TABLE `t_pesanan` (
 -- Dumping data for table `t_pesanan`
 --
 
-INSERT INTO `t_pesanan` (`id_pesanan`, `id_pengiriman`, `nama_pelanggan`, `email_pelanggan`, `alamat_pelanggan`, `total_harga`, `created_at`) VALUES
-(5, 0, 'asdsa', 'ada@aad.com', 'adsasdasdsad', '220000', '2025-01-05 22:29:06'),
-(6, 0, 'asdas', 'admin@gmail.com', 'asdasda', '45000', '2025-01-05 22:29:59'),
-(7, 1, 'adxzczxc', 'agung@example.com', 'ewwersdfs', '15000', '2025-01-05 22:30:59'),
-(8, 1, 'asas', 'rendhirichardo2@gmail.com', 'asaszxz', '10000', '2025-01-05 22:42:37'),
-(9, 1, 'Agung Pakmen', 'rendhirichardo2@gmail.com', 'igyusatv', '30000', '2025-01-05 22:43:29');
+INSERT INTO `t_pesanan` (`id_pesanan`, `id_user`, `id_pengiriman`, `nama_pelanggan`, `email_pelanggan`, `alamat_pelanggan`, `total_harga`, `created_at`) VALUES
+(5, 0, 0, 'asdsa', 'ada@aad.com', 'adsasdasdsad', '220000', '2025-01-05 22:29:06'),
+(6, 0, 0, 'asdas', 'admin@gmail.com', 'asdasda', '45000', '2025-01-05 22:29:59'),
+(7, 0, 1, 'adxzczxc', 'agung@example.com', 'ewwersdfs', '15000', '2025-01-05 22:30:59'),
+(8, 0, 1, 'asas', 'rendhirichardo2@gmail.com', 'asaszxz', '10000', '2025-01-05 22:42:37'),
+(9, 0, 1, 'Agung Pakmen', 'rendhirichardo2@gmail.com', 'igyusatv', '30000', '2025-01-05 22:43:29'),
+(10, 1, 1, 'Rendhi Richardo Ardiansyah', 'rendhirichardo2@gmail.com', 'adsasdzxc', '45000', '2025-01-06 02:11:45');
 
 -- --------------------------------------------------------
 
@@ -156,6 +166,28 @@ INSERT INTO `t_produk` (`id_produk`, `nama_produk`, `deskripsi`, `harga`, `kateg
 (19, 'Tiramisu', 'Banana Boat Tiramisu', '20000', 'Banana Boat', '543', '1736105941_103f30dad4c393e39b14.png'),
 (20, 'Matcha', 'Banana Boat Matcha', '20000', 'Banana Boat', '52', '1736105971_25c349a1e72b8e6c4936.png'),
 (21, 'Strawberry', 'Banana Boat Strawberry', '20000', 'Banana Boat', '765', '1736106006_66f86d350881954fa722.png');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `t_user`
+--
+
+CREATE TABLE `t_user` (
+  `id_user` int NOT NULL,
+  `nama_lengkap` varchar(255) NOT NULL,
+  `no_telp` varchar(20) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `role` enum('admin','pelanggan') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `t_user`
+--
+
+INSERT INTO `t_user` (`id_user`, `nama_lengkap`, `no_telp`, `email`, `password`, `role`) VALUES
+(1, 'Rendhi Richardo Ardiansyah', '081224210297', 'rendhirichardo2@gmail.com', '$2y$10$7NBF6OrSqzG7rXQD1s0whu3MgL4.0kFeOl1E082k/rxZihJ4kXCD.', 'admin');
 
 --
 -- Indexes for dumped tables
@@ -195,6 +227,12 @@ ALTER TABLE `t_produk`
   ADD PRIMARY KEY (`id_produk`);
 
 --
+-- Indexes for table `t_user`
+--
+ALTER TABLE `t_user`
+  ADD PRIMARY KEY (`id_user`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -202,13 +240,13 @@ ALTER TABLE `t_produk`
 -- AUTO_INCREMENT for table `t_detail_pesanan`
 --
 ALTER TABLE `t_detail_pesanan`
-  MODIFY `id_detail_pesanan` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_detail_pesanan` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `t_keranjang`
 --
 ALTER TABLE `t_keranjang`
-  MODIFY `id_keranjang` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_keranjang` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `t_pengiriman`
@@ -220,13 +258,19 @@ ALTER TABLE `t_pengiriman`
 -- AUTO_INCREMENT for table `t_pesanan`
 --
 ALTER TABLE `t_pesanan`
-  MODIFY `id_pesanan` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_pesanan` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `t_produk`
 --
 ALTER TABLE `t_produk`
   MODIFY `id_produk` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- AUTO_INCREMENT for table `t_user`
+--
+ALTER TABLE `t_user`
+  MODIFY `id_user` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
