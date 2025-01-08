@@ -20,11 +20,15 @@ class Pesanan extends BaseController
 
         // Ambil nama pengguna dari session
         $nama = session()->get('nama_lengkap');
+        $email = session()->get('email');
+        $no_telp = session()->get('no_telp');
 
         return view('front/checkout', [
             'keranjangItems' => $keranjangItems,
             'kurir' => $pengiriman,
             'nama' => $nama, // Kirim nama pengguna ke view
+            'email' => $email, // Kirim nama pengguna ke view
+            'no_telp' => $no_telp, // Kirim nama pengguna ke view
         ]);
     }
 

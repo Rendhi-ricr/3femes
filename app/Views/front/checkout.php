@@ -10,21 +10,21 @@
         <div class="card p-4 mb-4" style="background-color: #f9eaea;">
             <h2 class="card-title">Alamat Pengiriman</h2>
             <div class="mb-3">
-                <label for="id_user" class="form-label">Nama</label>
-                <input type="text" class="form-control" id="id_user" name="id_user" value="<?= esc($nama) ?>" readonly>
+                <label for="nama" class="form-label">Nama</label>
+                <input type="text" class="form-control" id="nama" name="nama" value="<?= esc($nama) ?>" readonly>
             </div>
 
             <div class="mb-3">
                 <label for="email" class="form-label">Email:</label>
-                <input type="email" id="email" name="email" class="form-control" required>
+                <input type="email" id="email" name="email" class="form-control" value="<?= esc($email) ?>" readonly>
             </div>
 
             <div class="mb-3">
                 <label for="telepon" class="form-label">Nomor Telepon:</label>
-                <input type="text" id="telepon" name="telepon" class="form-control" required>
+                <input type="text" id="telepon" name="telepon" class="form-control" value="<?= esc($no_telp) ?>" readonly>
             </div>
 
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-md-4 mb-3">
                     <label for="provinsi" class="form-label">Provinsi:</label>
                     <select id="provinsi" name="provinsi" class="form-select" required>
@@ -48,7 +48,7 @@
                         <option value="Subang">Subang</option>
                     </select>
                 </div>
-            </div>
+            </div> -->
 
             <div class="mb-3">
                 <label for="alamat" class="form-label">Alamat:</label>
